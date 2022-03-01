@@ -1,0 +1,23 @@
+<li id="doctor" class="checkout-doctor" data-bind="fadeVisible: isVisible">
+	<div class="step-title" data-bind="i18n: 'Doctor Information'" data-role="title"></div>
+
+	<div id="checkout-step-doctor"
+         class="step-content"
+         data-role="content"
+         role="tabpanel"
+         aria-hidden="false">
+
+		<form class="form form-doctor" id="co-doctor-form" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}">
+		    <div id="doctor-form" class="fieldset doctor">
+	    		<!-- ko foreach: getRegion('doctor-form-fields') -->
+	            <!-- ko template: getTemplate() --><!-- /ko -->
+	            <!--/ko-->
+		    </div>
+
+		    <button type="button" data-bind="click: saveDoctor" class="action">
+	            <span translate="'Submit'"></span>
+	        </button>
+		</form>
+		
+	</div>
+</li>

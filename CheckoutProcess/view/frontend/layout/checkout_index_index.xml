@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="checkout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <referenceBlock name="checkout.root">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="checkout" xsi:type="array">
+                                <item name="children" xsi:type="array">
+                                    <item name="steps" xsi:type="array">
+                                        <item name="children" xsi:type="array">
+                                            <item name="email-step" xsi:type="array">
+                                                <item name="component" xsi:type="string">uiComponent</item>
+                                                <item name="children" xsi:type="array">
+                                                    <item name="email" xsi:type="array">
+                                                        <item name="component" xsi:type="string">Brainspin_CheckoutProcess/js/view/email</item>
+                                                        <item name="config" xsi:type="array">
+                                                            <item name="sortOrder" xsi:type="string">1</item>
+                                                        </item>
+                                                        <item name="children" xsi:type="array">
+                                                             <item name="customer-email" xsi:type="array">
+                                                                <item name="component" xsi:type="string">Magento_Checkout/js/view/form/element/email</item>
+                                                                <item name="displayArea" xsi:type="string">customer-email</item>
+                                                                <item name="tooltip" xsi:type="array">
+                                                                    <item name="description" xsi:type="string" translate="true">We'll send your order confirmation here.</item>
+                                                                </item>
+                                                                <item name="children" xsi:type="array">
+                                                                    <item name="before-login-form" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">uiComponent</item>
+                                                                        <item name="displayArea" xsi:type="string">before-login-form</item>
+                                                                        <item name="children" xsi:type="array">
+                                                                            <!-- before login form fields -->
+                                                                        </item>
+                                                                    </item>
+                                                                    <item name="additional-login-form-fields" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">uiComponent</item>
+                                                                        <item name="displayArea" xsi:type="string">additional-login-form-fields</item>
+                                                                        <item name="children" xsi:type="array">
+                                                                            <!-- additional login form fields -->
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                            <item name="shipping-step" xsi:type="array">
+                                                <item name="children" xsi:type="array">
+                                                    <item name="shippingAddress" xsi:type="array">
+                                                        <item name="children" xsi:type="array">
+                                                            <item name="customer-email" xsi:type="array">
+                                                                <item name="config" xsi:type="array">
+                                                                    <item name="componentDisabled" xsi:type="boolean">true</item>
+                                                                </item>
+                                                            </item>
+                                                            <item name="shipping-address-fieldset" xsi:type="array">
+                                                                <item name="children" xsi:type="array">
+                                                                    <item name="city" xsi:type="array">
+                                                                        <item name="sortOrder" xsi:type="string">72</item>
+                                                                    </item>
+                                                                    <item name="region_id" xsi:type="array">
+                                                                        <item name="sortOrder" xsi:type="string">74</item>
+                                                                    </item>
+                                                                    <item name="postcode" xsi:type="array">
+                                                                        <item name="sortOrder" xsi:type="string">76</item>
+                                                                    </item>
+                                                                    <item name="telephone" xsi:type="array">
+                                                                        <item name="validation" xsi:type="array">
+                                                                            <item name="validate-phoneStrict" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                            <item name="doctor-step" xsi:type="array">
+                                                <item name="component" xsi:type="string">uiComponent</item>
+
+                                                <item name="children" xsi:type="array">
+                                                    <item name="doctor" xsi:type="array">
+                                                        <item name="config" xsi:type="array">
+                                                            <item name="deps" xsi:type="array">
+                                                                <item name="0" xsi:type="string">checkoutProvider</item>
+                                                            </item>
+                                                        </item>
+                                                        <item name="sortOrder" xsi:type="string">3</item>
+                                                        <item name="component" xsi:type="string">Brainspin_CheckoutProcess/js/view/doctor</item>
+                                                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                        <item name="children" xsi:type="array">
+                                                            <item name="doctor-fieldset" xsi:type="array">
+                                                                <item name="component" xsi:type="string">uiComponent</item>
+                                                                <item name="config" xsi:type="array">
+                                                                    <item name="deps" xsi:type="array">
+                                                                        <item name="0" xsi:type="string">checkoutProvider</item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="displayArea" xsi:type="string">doctor-form-fields</item>
+                                                                <item name="children" xsi:type="array">
+                                                                    <item name="doctor-name" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                                        <item name="config" xsi:type="array">
+                                                                            <item name="customScope" xsi:type="string">doctorCheckoutForm</item>
+                                                                            <item name="template" xsi:type="string">ui/form/field</item>
+                                                                            <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
+                                                                        </item>
+
+                                                                        <item name="label" xsi:type="string" translate="true">Doctor Name</item>
+                                                                        <item name="sortOrder" xsi:type="string">5</item>
+                                                                        <item name="validation" xsi:type="array">
+                                                                            <item name="required-entry" xsi:type="boolean">true</item>
+                                                                            <item name="min_text_length" xsi:type="number">2</item>
+                                                                        </item>
+                                                                    </item>
+                                                                    <item name="doctor-phone" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                                        <item name="config" xsi:type="array">
+                                                                            <item name="customScope" xsi:type="string">doctorCheckoutForm</item>
+                                                                            <item name="template" xsi:type="string">ui/form/field</item>
+                                                                            <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
+                                                                        </item>
+                                                                        <item name="label" xsi:type="string" translate="true">Doctor Number</item>
+                                                                        <item name="sortOrder" xsi:type="string">10</item>
+                                                                        <item name="validation" xsi:type="array">
+                                                                            <item name="required-entry" xsi:type="boolean">true</item>
+                                                                            <item name="validate-phoneStrict" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </referenceBlock>
+        </referenceContainer>
+    </body>
+</page>
